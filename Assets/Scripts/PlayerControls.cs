@@ -6,16 +6,18 @@ using UnityEngine;
 public class PlayerControls : MonoBehaviour
 {
     [SerializeField] float controlSpeed = 18f;
-    [SerializeField] float xRange = 8f;
-    [SerializeField] float yRange = 5.1f;
+    [SerializeField] float xRange = 16.5f;
+    [SerializeField] float yRange = 11f;
 
-    [SerializeField] float positionPitchFactor = -3.6f;
-    [SerializeField] private float controlPitchFactor = -10f;
+    [SerializeField] float positionPitchFactor = -.1f;
+    [SerializeField] private float controlPitchFactor = -20f;
+    
+    [SerializeField] float positionYawFactor = .98f;
+    
+    [SerializeField] private float controlRollFactor = -25f;
 
     float _xThrow, _yThrow;
-    private float _diff = 2.45f;
 
-    // Update is called once per frame
     void Update()
     {
         ProcessTranslation();
@@ -24,12 +26,16 @@ public class PlayerControls : MonoBehaviour
 
     void ProcessRotation()
     {
-        float pitchDueToPosition = (transform.localPosition.y - _diff) * positionPitchFactor;
+        float pitchDueToPosition = transform.localPosition.y * positionPitchFactor;
         float pitchDueToControlThrow = _yThrow * controlPitchFactor;
+
+        float yawDueToPosition = transform.localPosition.x * positionYawFactor;
+
+        float rollDueToControlThrow = _xThrow * controlRollFactor;
         
         float pitch =  pitchDueToPosition + pitchDueToControlThrow;
-        float yaw = 0f;
-        float roll = 0f;
+        float yaw = yawDueToPosition;
+        float roll = rollDueToControlThrow;
         transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
     }
 
@@ -46,7 +52,7 @@ public class PlayerControls : MonoBehaviour
         float rawYPos = transform.localPosition.y + yOffset;
 
         float clampedXPos = Mathf.Clamp(rawXPos, -xRange, xRange);
-        float clampedYPos = Mathf.Clamp(rawYPos, -yRange + _diff, yRange + _diff);
+        float clampedYPos = Mathf.Clamp(rawYPos, -yRange, yRange);
 
         transform.localPosition = new Vector3(clampedXPos, clampedYPos, transform.localPosition.z);
     }
