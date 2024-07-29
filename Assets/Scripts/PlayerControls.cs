@@ -8,13 +8,13 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] float controlSpeed = 18f;
     [SerializeField] float xRange = 16.5f;
     [SerializeField] float yRange = 11f;
-    [SerializeField]  GameObject[] lasers;
+    [SerializeField] GameObject[] lasers;
 
     [SerializeField] float positionPitchFactor = -.1f;
     [SerializeField] private float controlPitchFactor = -20f;
-    
+
     [SerializeField] float positionYawFactor = .98f;
-    
+
     [SerializeField] private float controlRollFactor = -25f;
 
     float _xThrow, _yThrow;
@@ -34,8 +34,8 @@ public class PlayerControls : MonoBehaviour
         float yawDueToPosition = transform.localPosition.x * positionYawFactor;
 
         float rollDueToControlThrow = _xThrow * controlRollFactor;
-        
-        float pitch =  pitchDueToPosition + pitchDueToControlThrow;
+
+        float pitch = pitchDueToPosition + pitchDueToControlThrow;
         float yaw = yawDueToPosition;
         float roll = rollDueToControlThrow;
         transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
@@ -63,27 +63,20 @@ public class PlayerControls : MonoBehaviour
     {
         if (Input.GetButton("Fire1"))
         {
-            ActiveLasers();
+            SetLasersActive(true);
         }
         else
         {
-            DeactiveLasers();
+            SetLasersActive(false);
         }
     }
 
-    void ActiveLasers()
+    void SetLasersActive(bool isActive)
     {
         foreach (GameObject laser in lasers)
         {
-            laser.SetActive(true);
-        }
-    }
-
-    void DeactiveLasers()
-    {
-        foreach (GameObject laser in lasers)
-        {
-            laser.SetActive(false);
+            var emissionModule = laser.GetComponent<ParticleSystem>().emission;
+            emissionModule.enabled = isActive;
         }
     }
 }
