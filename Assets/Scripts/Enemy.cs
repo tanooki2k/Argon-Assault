@@ -5,15 +5,23 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] GameObject deathVFX;
     [SerializeField] GameObject hitVFX;
-    [SerializeField] Transform parent;
     [SerializeField] int scorePerHit = 15;
-    [SerializeField] int hitPoints = 10;
+    [SerializeField] int hitPoints = 4;
 
     ScoreBoard _scoreBoard;
-
+    GameObject _parentGameObject;
+    
     void Start()
     {
         _scoreBoard = FindObjectOfType<ScoreBoard>();
+        _parentGameObject = GameObject.FindWithTag("SpawnAtRuntime");
+        AddRigidBody();
+    }
+
+    void AddRigidBody()
+    {
+        Rigidbody rb = gameObject.AddComponent<Rigidbody>();
+        rb.useGravity = false;
     }
 
     void OnParticleCollision(GameObject other)
@@ -25,7 +33,7 @@ public class Enemy : MonoBehaviour
     void ProcessHit()
     {
         GameObject vfx = Instantiate(hitVFX, transform.position, Quaternion.identity);
-        vfx.transform.parent = parent;
+        vfx.transform.parent = _parentGameObject.transform;
         
         hitPoints--;
         _scoreBoard.IncreaseScore(scorePerHit);
@@ -33,10 +41,8 @@ public class Enemy : MonoBehaviour
 
     void KillEnemy()
     {
-        _scoreBoard.IncreaseScore(scorePerHit * 2);
-        
         GameObject vfx = Instantiate(deathVFX, transform.position, Quaternion.identity);
-        vfx.transform.parent = parent;
+        vfx.transform.parent = _parentGameObject.transform;
         Destroy(gameObject);
     }
 }
