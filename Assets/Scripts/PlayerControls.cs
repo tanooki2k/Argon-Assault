@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerControls : MonoBehaviour
@@ -9,7 +10,7 @@ public class PlayerControls : MonoBehaviour
 
 
     [Header("Laser gun array")]
-    [Tooltip(("Add all players laser here"))] [SerializeField] GameObject[] lasers;
+    [Tooltip(("Add all players laser here"))] [SerializeField] public GameObject[] lasers;
 
     
     [Header("Screen position based tuning")]
