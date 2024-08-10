@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class PlayerControls : MonoBehaviour
@@ -66,14 +65,7 @@ public class PlayerControls : MonoBehaviour
 
     void ProcessFiring()
     {
-        if (Input.GetButton("Fire1"))
-        {
-            SetLasersActive(true);
-        }
-        else
-        {
-            SetLasersActive(false);
-        }
+        SetLasersActive(Input.GetButton("Fire1"));
     }
 
     void SetLasersActive(bool isActive)
