@@ -9,7 +9,7 @@ public class PlayerControls : MonoBehaviour
 
 
     [Header("Laser gun array")]
-    [Tooltip(("Add all players laser here"))] [SerializeField] GameObject[] lasers;
+    [Tooltip(("Add all players laser here"))] [SerializeField] public GameObject[] lasers;
 
     
     [Header("Screen position based tuning")]
@@ -65,14 +65,7 @@ public class PlayerControls : MonoBehaviour
 
     void ProcessFiring()
     {
-        if (Input.GetButton("Fire1"))
-        {
-            SetLasersActive(true);
-        }
-        else
-        {
-            SetLasersActive(false);
-        }
+        SetLasersActive(Input.GetButton("Fire1"));
     }
 
     void SetLasersActive(bool isActive)

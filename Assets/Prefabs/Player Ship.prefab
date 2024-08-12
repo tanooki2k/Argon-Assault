@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5238855413078332060}
   - component: {fileID: 881825582}
   - component: {fileID: 6308586331688901401}
+  - component: {fileID: 2078206829749838483}
   - component: {fileID: 6674042645818140739}
   - component: {fileID: 1997837382158093291}
   m_Layer: 0
@@ -122,6 +123,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadDelay: 1
   crashVFX: {fileID: 4744139416040096104}
+--- !u!114 &2078206829749838483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652249688723412177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec53a1a04115b24ab7ec500437e7ed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToWait: 4.5
 --- !u!65 &6674042645818140739
 BoxCollider:
   m_ObjectHideFlags: 0
