@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 123456789
+  m_text: 'Score: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 417283b70e0715442857d54aaabad20e, type: 2}
   m_sharedMaterial: {fileID: -2837120359298528219, guid: 417283b70e0715442857d54aaabad20e, type: 2}
@@ -393,6 +393,7 @@ GameObject:
   - component: {fileID: 8275810523986903210}
   - component: {fileID: 6887857834068322231}
   - component: {fileID: 6467663330697409162}
+  - component: {fileID: 91270022}
   m_Layer: 5
   m_Name: Slackbar Image
   m_TagString: Untagged
@@ -417,7 +418,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -103.196, y: 136.606}
+  m_AnchoredPosition: {x: -120, y: 136}
   m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.58220214, y: 0.46803087}
 --- !u!222 &6887857834068322231
@@ -458,3 +459,24 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &91270022
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8756420401569031421}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

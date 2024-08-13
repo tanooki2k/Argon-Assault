@@ -61,6 +61,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5806766211348899180}
     m_Modifications:
+    - target: {fileID: 881825582, guid: 13293453e8d5bc04dac13734e3d884c4, type: 3}
+      propertyPath: lasers.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 881825582, guid: 13293453e8d5bc04dac13734e3d884c4, type: 3}
+      propertyPath: lasers.Array.data[0]
+      value: 
+      objectReference: {fileID: 6099846849574339827}
+    - target: {fileID: 881825582, guid: 13293453e8d5bc04dac13734e3d884c4, type: 3}
+      propertyPath: lasers.Array.data[1]
+      value: 
+      objectReference: {fileID: 848027509807496188}
     - target: {fileID: 163977926894128747, guid: 13293453e8d5bc04dac13734e3d884c4, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -118,6 +130,16 @@ PrefabInstance:
 --- !u!4 &1998179264589125123 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 163977926894128747, guid: 13293453e8d5bc04dac13734e3d884c4, type: 3}
+  m_PrefabInstance: {fileID: 1872482020444428392}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &848027509807496188 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1312985095911564180, guid: 13293453e8d5bc04dac13734e3d884c4, type: 3}
+  m_PrefabInstance: {fileID: 1872482020444428392}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6099846849574339827 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5574161243403410587, guid: 13293453e8d5bc04dac13734e3d884c4, type: 3}
   m_PrefabInstance: {fileID: 1872482020444428392}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7978303964708668948
