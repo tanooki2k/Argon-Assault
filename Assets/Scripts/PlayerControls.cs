@@ -3,7 +3,9 @@ using UnityEngine;
 public class PlayerControls : MonoBehaviour
 {
     [Header("General Setup Settings")]
-    [Tooltip("How fast ship moves up and down based upon player input")] [SerializeField] float controlSpeed = 18f;
+    [Tooltip("How fast ship moves up and down based upon player input")]
+    [SerializeField] 
+    float controlSpeed = 18f;
     [Tooltip("How far player moves horizontally")] [SerializeField] float xRange = 16.5f;
     [Tooltip("How far player moves vertically")] [SerializeField] float yRange = 11f;
 
